@@ -20,6 +20,9 @@ export default function TicTacToe() {
     }
 
     function handleClick(index) {
+        if (board[index] !== " ") {
+            return
+        }
         const newBoard = updateBoard(index);
         updateHistory(newBoard);
         checkWinner(newBoard);
